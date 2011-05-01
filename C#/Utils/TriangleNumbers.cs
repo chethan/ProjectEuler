@@ -1,0 +1,58 @@
+﻿using System;
+using System.IO;
+
+namespace EulerProblem.Utils
+{
+    public class TriangleNumbers
+    {
+        private readonly int[,] triangleNumbers;
+
+        public TriangleNumbers(int[,] triangleNumbers)
+        {
+            this.triangleNumbers = triangleNumbers;
+        }
+
+
+        public TriangleNumbers(string filePath)
+        {
+            using (var fileStream = File.OpenText(filePath))
+            {
+                string readToEnd = fileStream.ReadToEnd();
+                string[] strings = readToEnd.Split('\n');
+                triangleNumbers = new int[strings.Length, strings.Length];
+                for (int i = 0; i < strings.Length; i++)
+                {
+                    string[] numbers = strings[i].Split(' ');
+                    for (int j = 0; j < numbers.Length; j++)
+                    {
+                        triangleNumbers[i, j] = Convert.ToInt32(numbers[j]);
+                    }
+                }
+            }
+        }
+
+        public long MaximumSum()
+        {
+            var lenght = (int)Math.Sqrt(triangleNumbers.Length);
+            var maximumSums = new int[lenght, lenght];
+            var maximumSumsPerLevel = new int[lenght];
+            for (int column = 0; column < lenght; column++)
+            {
+                maximumSums[0, column] = triangleNumbers[0, column];
+            }
+
+            for (int level = 1; level < lenght; level++)
+            {
+                maximumSumsPerLevel[level] = 0;
+                for (int colum = 0; colum < lenght; colum++)
+                {
+                    int sum1 = colum == 0 ? 0 : maximumSums[level - 1, colum - 1];
+                    int sum2 = maximumSums[level - 1, colum];
+                    maximumSums[level, colum] = Math.Max(sum1, sum2) + triangleNumbers[level, colum];
+                    maximumSumsPerLevel[level] = Math.Max(maximumSumsPerLevel[level], maximumSums[level, colum]);
+                }
+            }
+            return maximumSumsPerLevel[lenght - 1];
+        }
+    }
+}
