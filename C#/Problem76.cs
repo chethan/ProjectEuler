@@ -80,7 +80,8 @@ namespace EulerProblem
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return GetHashCode()==other.GetHashCode();
+           return  (GetHashCode() == other.GetHashCode() && 
+             values.All(i => values.Count(i1 => i==i1) == other.values.Count(i2 => i2==i)));
         }
 
         public override bool Equals(object obj)
@@ -93,7 +94,7 @@ namespace EulerProblem
 
         public override int GetHashCode()
         {
-            return values.Aggregate(values.Count, (current, t) => unchecked((t+1)*319) * current);
+            return values.Aggregate(values.Count, (current, t) => unchecked((t+1)*345619) * current);
         }
 
         public override string ToString()

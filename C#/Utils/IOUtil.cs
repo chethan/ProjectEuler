@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace EulerProblem.Utils
 {
@@ -22,6 +24,21 @@ namespace EulerProblem.Utils
                 }
                 return matrix;
             }
+        }
+
+        public static List<int> PrimeNumbesList()
+        {
+            var primeNumbers = new List<int>();
+            using (var fileStream = File.OpenText("PrimeNumbers.txt"))
+            {
+                string line;
+                while ((line=fileStream.ReadLine())!=null)
+                {
+                    List<string> list = line.Trim().Split(' ').ToList();
+                    list.ForEach(s => primeNumbers.Add(Convert.ToInt32(s)));
+                }
+            }
+            return primeNumbers;
         }
     }
 }
