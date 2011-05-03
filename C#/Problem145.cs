@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Numerics;
+using EulerProblem.Utils;
 
 namespace EulerProblem
 {
@@ -23,7 +24,7 @@ namespace EulerProblem
         public static bool IsReversible(BigInteger num)
         {
             BigInteger bigInteger = num+BigInteger.Parse(new string(num.ToString().Reverse().ToArray()));
-            return Problem52.GetDigits(bigInteger).All(l => l%2==1);
+            return bigInteger.GetDigits().All(l => l%2==1);
         }
     }
 }

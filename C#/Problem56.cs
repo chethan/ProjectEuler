@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using EulerProblem.Utils;
 
 namespace EulerProblem
 {
@@ -14,7 +15,7 @@ namespace EulerProblem
             {
                 for (int b = 0; b < 100; b++)
                 {
-                    var digits = Problem52.GetDigits(BigInteger.Pow(a,b));
+                    var digits = BigInteger.Pow(a,b).GetDigits();
                     var sum = digits.Sum();
                     if (maxSum < sum)
                     {

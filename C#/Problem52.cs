@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using EulerProblem.Utils;
 
 namespace EulerProblem
 {
@@ -14,13 +15,13 @@ namespace EulerProblem
             {
                 for (i=j; i < i*10; i++)
                 {
-                    List<long> digits = GetDigits(i);
+                    List<int> digits = i.GetDigits();
                     var numbers = new List<long> { 2 * i, 3* i, 4 * i, 5 * i,6*i };
-                    if (GetDigits(6 * i).Count > digits.Count) break;
+                    if ((6 * i).GetDigits().Count > digits.Count) break;
                     bool allEqual = true;
                     foreach (var number in numbers)
                     {
-                        List<long> numDigits = GetDigits(number);
+                        List<int> numDigits = number.GetDigits();
 
                         if (!numDigits.All(digits.Contains) || !digits.All(numDigits.Contains))
                         {
@@ -32,18 +33,6 @@ namespace EulerProblem
                 }
             }
             return i;
-        }
-
-       public static List<long> GetDigits(BigInteger number)
-        {
-            BigInteger a = number;
-            var digits=new List<long>();
-            while (a!=0)
-            {
-                digits.Add((long)(a%10));
-                a = a/10;
-            }
-            return digits;
         }
     }
 }

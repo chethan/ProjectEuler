@@ -1,6 +1,9 @@
-﻿namespace EulerProblem.Utils
+﻿using System.Collections.Generic;
+using System.Numerics;
+
+namespace EulerProblem.Utils
 {
-    public class MathUtils
+    public static class MathUtils
     {
         public static int GCD(int number1, int number2)
         {
@@ -11,6 +14,23 @@
                 number1 = temp;
             }
             return number2;
+        }
+
+        public static List<int> GetDigits(this BigInteger number)
+        {
+            BigInteger a = number;
+            var digits = new List<int>();
+            while (a != 0)
+            {
+                digits.Add((int)(a % 10));
+                a = a / 10;
+            }
+            return digits;
+        }
+
+        public static List<int> GetDigits(this long number)
+        {
+           return GetDigits((BigInteger)number);
         }
     }
 }
