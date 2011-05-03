@@ -7,6 +7,7 @@ namespace EulerProblem
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine(Problem183.SummationOfDofN(5,10000));
 //            Console.WriteLine(Problem81.MinimalPathSum());
 //            Console.WriteLine(Problem67.MaximumSumToBase());
 //            Console.WriteLine(Problem18.MaximumSumToBase());
