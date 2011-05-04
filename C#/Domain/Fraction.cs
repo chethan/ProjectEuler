@@ -1,4 +1,5 @@
 using System.Numerics;
+using EulerProblem.Utils;
 
 namespace EulerProblem.Domain
 {
@@ -9,13 +10,24 @@ namespace EulerProblem.Domain
 
         public Fraction(BigInteger numerator, BigInteger denominator)
         {
-            Numerator = numerator;
-            Denominator = denominator;
+            BigInteger gcd = MathUtils.GCD(numerator,denominator);
+            Numerator = numerator/gcd;
+            Denominator = denominator/gcd;
         }
 
         public Fraction Add(int number)
         {
             return new Fraction(Numerator + Denominator*number,Denominator);
+        }
+
+        public Fraction Add(Fraction number)
+        {
+            return new Fraction(Numerator * number.Denominator + number.Numerator*Denominator,Denominator * number.Denominator);
+        }
+
+        public Fraction Reciprocal()
+        {
+            return new Fraction(Denominator,Numerator);
         }
 
         public bool Equals(Fraction other)

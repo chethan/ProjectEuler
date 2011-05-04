@@ -7,7 +7,9 @@ namespace EulerProblem
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(Problem77.GeneratePrimeCombinations());
+
+            Console.WriteLine(Problem155.NumberOfDistinctCapacitences(18,60));
+//            Console.WriteLine(Problem77.GeneratePrimeCombinations());
 //            Console.WriteLine(Problem78.LeastNumberDivisable(1000000));
 //            Console.WriteLine(Problem76.TotalNumberOfCombinations(100));
 //            Console.WriteLine(Problem57.CountOfExpansions());

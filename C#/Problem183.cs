@@ -22,7 +22,7 @@ namespace EulerProblem
         }
 
 
-        private static long PartsMax(int number)
+        private static BigInteger PartsMax(int number)
         {
             const double E = 2.718281828;
             var i = (int) Math.Round(number / E);
