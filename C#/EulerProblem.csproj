@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Domain\Fraction.cs" />
     <Compile Include="Problem11.cs" />
+    <Compile Include="Problem112.cs" />
     <Compile Include="Problem12.cs" />
     <Compile Include="Problem145.cs" />
     <Compile Include="Problem155.cs" />
