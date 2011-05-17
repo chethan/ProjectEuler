@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using EulerProblem.Utils;
 
 namespace EulerProblem
 {
@@ -6,11 +8,11 @@ namespace EulerProblem
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(Problem112.NumberOfBouncy(99));
+//            Console.WriteLine(Problem112.NumberOfBouncy(99));
 //            Console.WriteLine(Problem155.NumberOfDistinctCapacitences(18,60));
 //            Console.WriteLine(Problem77.GeneratePrimeCombinations());
 //            Console.WriteLine(Problem78.LeastNumberDivisable(1000000));
-//            Console.WriteLine(Problem76.TotalNumberOfCombinations(100));
+//            Console.WriteLine(Problem76.TotalNumberOfCombinations(18));
 //            Console.WriteLine(Problem57.CountOfExpansions());
 //            Console.WriteLine(Problem183.SummationOfDofN(5,10000));
 //            Console.WriteLine(Problem81.MinimalPathSum());

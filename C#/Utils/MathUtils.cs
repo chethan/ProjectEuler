@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
+using System.Linq;
 
 namespace EulerProblem.Utils
 {
@@ -32,5 +33,18 @@ namespace EulerProblem.Utils
         {
            return GetDigits((BigInteger)number);
         }
+
+        public static List<List<int>> Permutations(List<int> list)
+        {
+            if (list.Count == 1) return new List<List<int>>{new List<int>{list[0]}};
+            var allPermutations = new List<List<int>>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                List<List<int>> permutations = Permutations(list.Where((i1,index) => index!=i).ToList());
+                permutations.ForEach(ints => ints.Add(list[i]));
+                allPermutations.AddRange(permutations);
+            }
+            return allPermutations;
+        } 
     }
 }
