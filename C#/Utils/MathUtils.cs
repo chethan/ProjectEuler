@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Numerics;
 using System.Linq;
 
@@ -45,6 +47,12 @@ namespace EulerProblem.Utils
                 allPermutations.AddRange(permutations);
             }
             return allPermutations;
+        } 
+
+        public static IEnumerable<T> RotateWith<T,TKey>(this IEnumerable<T>  enumeration, Func<T,TKey> func)
+        {
+            var first = enumeration.OrderBy(func).First();
+            return enumeration.SkipWhile(arg => !arg.Equals(first)).Concat(enumeration.TakeWhile(arg => !arg.Equals(first)));
         } 
     }
 }

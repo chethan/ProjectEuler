@@ -8,6 +8,7 @@ namespace EulerProblem
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine(Problem68.Magic5GonRing());
 //            Console.WriteLine(Problem112.NumberOfBouncy(99));
 //            Console.WriteLine(Problem155.NumberOfDistinctCapacitences(18,60));
 //            Console.WriteLine(Problem77.GeneratePrimeCombinations());
