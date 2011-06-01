@@ -67,6 +67,7 @@
     <Compile Include="Problem55.cs" />
     <Compile Include="Problem56.cs" />
     <Compile Include="Problem57.cs" />
+    <Compile Include="Problem59.cs" />
     <Compile Include="Problem67.cs" />
     <Compile Include="Problem68.cs" />
     <Compile Include="Problem76.cs" />
@@ -81,6 +82,9 @@
     <Compile Include="Utils\TriangleNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Problem59.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="PrimeNumbers.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
