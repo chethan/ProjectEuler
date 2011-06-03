@@ -73,6 +73,7 @@
     <Compile Include="Problem76.cs" />
     <Compile Include="Problem77.cs" />
     <Compile Include="Problem78.cs" />
+    <Compile Include="Problem79.cs" />
     <Compile Include="Problem81.cs" />
     <Compile Include="Problem89.cs" />
     <Compile Include="Program.cs" />
@@ -82,6 +83,9 @@
     <Compile Include="Utils\TriangleNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Problem79.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Problem59.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
