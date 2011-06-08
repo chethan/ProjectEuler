@@ -50,6 +50,7 @@
     <Compile Include="Problem12.cs" />
     <Compile Include="Problem145.cs" />
     <Compile Include="Problem155.cs" />
+    <Compile Include="Problem17.cs" />
     <Compile Include="Problem173.cs" />
     <Compile Include="Problem18.cs" />
     <Compile Include="Problem183.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Problem28.cs" />
     <Compile Include="Problem30.cs" />
     <Compile Include="Problem36.cs" />
+    <Compile Include="Problem34.cs" />
     <Compile Include="Problem42.cs" />
     <Compile Include="Problem52.cs" />
     <Compile Include="Problem53.cs" />
@@ -83,6 +85,9 @@
     <Compile Include="Utils\TriangleNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NumberToString.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Problem79.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

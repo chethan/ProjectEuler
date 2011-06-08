@@ -1,4 +1,5 @@
 using System.Numerics;
+using EulerProblem.Utils;
 
 namespace EulerProblem
 {
@@ -11,7 +12,7 @@ namespace EulerProblem
             {
                 for (BigInteger r = 1; r <= n / 2; r++)
                 {
-                    BigInteger ncr = Factorial(n) / (Factorial(r) * Factorial(n - r));
+                    BigInteger ncr = MathUtils.Factorial(n) / (MathUtils.Factorial(r) * MathUtils.Factorial(n - r));
                     if(ncr > 1000000)
                     {
                         if(r != (n-r)) aboveOneMillion += 1;
@@ -20,17 +21,6 @@ namespace EulerProblem
                 }
             }
             return aboveOneMillion;
-        }
-
-        public static BigInteger Factorial(BigInteger num)
-        {
-            BigInteger factorial = 1;
-            while (num!=1)
-            {
-                factorial *= num;
-                num -= 1;
-            }
-            return factorial;
         }
     }
 }

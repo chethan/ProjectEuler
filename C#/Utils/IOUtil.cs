@@ -26,9 +26,9 @@ namespace EulerProblem.Utils
             }
         }
 
-        public static List<int> PrimeNumbesList()
+        public static List<long> PrimeNumbesList()
         {
-            var primeNumbers = new List<int>();
+            var primeNumbers = new List<long>();
             using (var fileStream = File.OpenText("PrimeNumbers.txt"))
             {
                 string line;

@@ -6,7 +6,9 @@ namespace EulerProblem
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(Problem79.MinimumPossiblePassword());
+//            Console.WriteLine(Problem34.SumOfAllFactorions());
+//            Console.WriteLine(Problem17.TotalNumberOfCharecters(1000));
+//            Console.WriteLine(Problem79.MinimumPossiblePassword());
 //            Console.WriteLine(Problem59.DecypherText());
 //            Console.WriteLine(Problem68.Magic5GonRing());
 //            Console.WriteLine(Problem112.NumberOfBouncy(99));

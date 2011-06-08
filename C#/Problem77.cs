@@ -8,7 +8,7 @@ namespace EulerProblem
     {
         public static int GeneratePrimeCombinations()
         {
-            List<int> primeNumbesList = IOUtil.PrimeNumbesList();
+            List<long> primeNumbesList = IOUtil.PrimeNumbesList();
             var allCombinations = new List<HashSet<Combination>>
                                       {
                                           new HashSet<Combination> { new Combination(new List<int> { -1 }) },
