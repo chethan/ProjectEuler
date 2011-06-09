@@ -1,0 +1,1 @@
+product_of_n_digits = product $ map (digitToInt.((foldr (\x y -> show x ++ y) "" [0,1..])!!)) (map (10^)[0,1,2,3,4,5,6])
