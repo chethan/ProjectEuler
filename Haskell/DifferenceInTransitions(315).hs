@@ -1,20 +1,11 @@
 import Data.Char (digitToInt)
+import Data.Numbers.Primes (isPrime)
 
 xor True False = True
 xor False True = True
 xor _ _ = False
 
 append_spaces num = (take (8 - (length num)) (repeat ' ')) ++ num
-
-smallest_divisor n next  = find_divisor n 2 next
-					 		where find_divisor n divisor next | (truncate (sqrt (fromIntegral n))) < divisor = n
-						    					  		      | (rem n divisor)==0 = divisor
-												  	          | otherwise =  find_divisor n (next divisor) next
-get_next 2 = 3
-get_next x = x+2
-
-is_prime n = n == smallest_divisor n get_next
-
 
 my_digitToInt num | num == ' ' = 0
 				  | otherwise = (digitToInt num) + 1
@@ -46,4 +37,4 @@ sams_transitions num1 num2 = (transitions num1 "") + (transitions "" num2)
 sams_total_transitions nums =  sum $ zipWith sams_transitions ([""] ++ (map show nums)) ((map show nums)++[""])
 maxs_total_transitions nums =  sum $ zipWith transitions ([""] ++ (map show nums)) ((map show nums)++[""])
 
-difference_in_transitions= sum (map (\x -> (sams_total_transitions (digital_roots x)) -  (maxs_total_transitions (digital_roots x))) (filter is_prime [10^7 .. ((10^7)+(10^7))]))
+difference_in_transitions= sum (map (\x -> (sams_total_transitions (digital_roots x)) -  (maxs_total_transitions (digital_roots x))) (filter isPrime [10^7 .. ((10^7)+(10^7))]))
